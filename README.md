@@ -1,16 +1,61 @@
-# React + Vite
+# AuthFlow Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend application for **AuthFlow**, a user authentication and profile management system built with **React**, **Redux Toolkit**, **Tailwind CSS**, and **React Router**. It supports signup, login, fetching user details, updating user profile, and managing authentication state with Redux.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- **User Authentication**: Signup and login with email and password.
+- **Redux State Management**: Stores user data and JWT token.
+- **Persistent Login**: Keeps user logged in across page refreshes using Redux.
+- **Dashboard**: Display and update user profile (name, email, optional password, phone, and address).
+- **Responsive Design**: Dashboard fields are responsive for mobile and desktop.
+- **Sidebar Navigation**: Light-mode-only sidebar with navigation links and logged-in user panel including logout.
+- **Toasts**: Success and error notifications for user actions.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React** with functional components and hooks
+- **Redux Toolkit** for state management
+- **React Router** for navigation
+- **Tailwind CSS** for styling
+- **Axios** for API calls
+- **Lucide Icons** for UI icons
+- **Sonner** for toast notifications
+- **Jest** for unit testing
+
+---
+
+## Getting Started
+
+### 1. Clone the Repository
+
+git clone https://github.com/yourusername/authflow-frontend.git
+cd authflow-frontend
+
+### 2. Install Dependencies
+
+npm install
+
+### 3. Configure Environment Variables
+Create a .env file in the root directory:
+VITE_API_BASE_URL=http://localhost:3000
+
+### 4. Run the Application
+npm run dev
+
+### Project Structure
+
+src/
+├─ components/ # Reusable UI components
+├─ pages/ # Pages: Login, Signup, Dashboard
+├─ redux/
+│ ├─ slices/ # Redux slices (user slice)
+│ ├─ thunk/ # Async thunks for API calls
+├─ navigations/ # Private routes & sidebar navigation
+├─ utils/ # Helper functions (toast, env utils)
+├─ App.jsx # Main app component
+├─ main.jsx # Entry point

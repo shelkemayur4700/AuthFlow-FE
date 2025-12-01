@@ -7,7 +7,7 @@ const Root = () => {
   const { token } = useUser();
 
   const getToken = () => {
-    if (!token) {
+    if (token) {
       return true;
     } else {
       // logout();
